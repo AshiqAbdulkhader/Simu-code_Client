@@ -26,7 +26,10 @@ def getvalue():
     'memory_limit': 262144,
     }
     r = requests.post(RUN_URL, data=data)
-    print("Output : ",r.json()['run_status']['output_html'])
+    if(r.json()['compile_status']=="OK"):
+        print(r.json()['run_status']['output_html'])
+    else:
+        print(r.json()['compile_status'])
     return render_template('index.html', output=output)
 
 
