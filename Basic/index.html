@@ -1,14 +1,15 @@
 <html>
 
 <body>
-    <div id="code">
-        <textarea id="codewr" name="code" rows="40" cols="50" class="codein" placeholder="Code goes here"></textarea>
-    </div>
-    <div id="output">
-        <textarea id="outputr" name="output rows=" 40 " cols="50 " class = "output " disabled placeholder="output goes here ">{% if output %}<strong>OUTPUT:</strong> {{ output }} {% endif %}</textarea>
-    </div>
-    <button type="button " action=". " method="post " onclick="alert( 'Run clicked') ">Run</button>
-
+    <form id="code-post" action="." method="post" name="code-post" data-name="Code form" class="form">
+        <div id="code">
+            <textarea id="codewr" name="code" rows="40" cols="50" class="codein" placeholder="Code goes here"></textarea>
+        </div>
+        <div id="output">
+            <textarea id="outputr" name="output rows=" 40 " cols="50 " class = "output " disabled placeholder="output goes here ">{% if output %}<strong>OUTPUT:</strong> {{ output }} {% endif %}</textarea>
+        </div>
+        <button type="button " onclick="alert( 'Run clicked') ">Run</button>
+    </form>
     <!-- <label for="lang ">Programming language:</label>
     <select name="lang " id="lang ">
             <option value="python ">Python</option>
