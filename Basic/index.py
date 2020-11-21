@@ -28,8 +28,10 @@ def getvalue():
     r = requests.post(RUN_URL, data=data)
     if(r.json()['compile_status']=="OK"):
         print(r.json()['run_status']['output_html'])
+        output=r.json()['run_status']['output_html']
     else:
         print(r.json()['compile_status'])
+        output=r.json()['compile_status']
     return render_template('index.html', output=output)
 
 
