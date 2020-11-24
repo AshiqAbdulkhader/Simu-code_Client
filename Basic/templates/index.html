@@ -1,12 +1,51 @@
 <html>
 
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/codemirror.css">
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+
 <body>
-    <form id="code-post" action="." method="post" name="code-post" data-name="Code form" class="form">
-        <textarea id="codewr" name="code" rows="40" cols="50" class="codein" placeholder="Code goes here"></textarea>
-        <!-- <textarea id="outputr" name="output rows=" 40 " cols="50 " class = "output " disabled placeholder="output goes here ">{% if output %}<strong>OUTPUT:</strong> {{ output }} {% endif %}</textarea> -->
-        <div contenteditable="true" id="outputr" name="output" placeholder="Ouput will be displayed here" class="outputr">{% if output %} Output: {{ output }} {% endif %}</div>
-        <button type="submit ">Run</button>
-    </form>
+    <div id="code">
+        <form id="form-code" action="." method="post" name="code-post" data-name="Code form" class="form">
+            <textarea class="codemirror-textarea" name="code"></textarea>
+            <!-- <textarea id="editor" name="code" rows="32" cols="50" class="codein" placeholder="Code goes here"></textarea> -->
+            <div id="op-dec"><strong>Output:</strong></div>
+            <div contenteditable="true" id="code-output" name="output" placeholder="Ouput will be displayed here" class="outputr">{% if output %} {{ output }} {% endif %}</div>
+            <button id="code-run" type="submit ">Run</button>
+        </form>
+    </div>
+
+    <!--javascript-->
+    <script type="text/javascript" src="../static/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/codemirror.js"></script>
+    <script type="text/javascript" src="../static/default.js"></script>
+
+    <style>
+        /* width */
+        
+         ::-webkit-scrollbar {
+            width: 5px;
+        }
+        /* Track */
+        
+         ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgb(90, 87, 87);
+            border-radius: 5px;
+        }
+        /* Handle */
+        
+         ::-webkit-scrollbar-thumb {
+            background: rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+        /* Handle on hover */
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #000000;
+        }
+    </style>
+
     <!-- <label for="lang ">Programming language:</label>
     <select name="lang " id="lang ">
             <option value="python ">Python</option>
