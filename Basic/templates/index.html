@@ -6,10 +6,22 @@
 </head>
 
 <body>
-    <div id="code">
+    <div id="code-side">
+        <div id="code-head">
+            <button id="download">Download</button>
+            <div id="dropdown">
+                <select name="lang " id="dropbtn">
+                <div id="drop-content">
+                    <option value="python ">Python</option>
+                    <option value="java ">Java</option>
+                    <option value="c ">C</option>
+                    <option value="cpp ">C++ </option>
+                </div>
+                </select>
+            </div>
+        </div>
         <form id="form-code" action="." method="post" name="code-post" data-name="Code form" class="form">
             <textarea class="codemirror-textarea" name="code"></textarea>
-            <!-- <textarea id="editor" name="code" rows="32" cols="50" class="codein" placeholder="Code goes here"></textarea> -->
             <div id="op-dec"><strong>Output:</strong></div>
             <div contenteditable="true" id="code-output" name="output" placeholder="Ouput will be displayed here" class="outputr">{% if output %} {{ output }} {% endif %}</div>
             <button id="code-run" type="submit ">Run</button>
@@ -25,12 +37,13 @@
         /* width */
         
          ::-webkit-scrollbar {
-            width: 5px;
+            height: 7px;
+            width: 7px;
         }
         /* Track */
         
          ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px rgb(90, 87, 87);
+            box-shadow: inset 0 0 5px rgba(90, 87, 87, 0);
             border-radius: 5px;
         }
         /* Handle */
@@ -46,13 +59,7 @@
         }
     </style>
 
-    <!-- <label for="lang ">Programming language:</label>
-    <select name="lang " id="lang ">
-            <option value="python ">Python</option>
-            <option value="java ">Java</option>
-            <option value="c ">C</option>
-            <option value="cpp ">C++ </option>
-        </select> -->
+
 </body>
 
 </html>

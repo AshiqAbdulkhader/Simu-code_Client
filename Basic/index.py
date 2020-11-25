@@ -16,7 +16,8 @@ def index():
 def getvalue():
     output=None
     code = request.form['code']
-    
+    lang = request.form.get('lang') ##Check here Ashiq
+    print("lang= ", lang)
     data = {
     'client_secret': CLIENT_SECRET,
     'async': 0,
