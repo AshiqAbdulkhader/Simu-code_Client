@@ -1,16 +1,15 @@
 body {
     background-image: linear-gradient(to bottom left, #2c3858, #172036);
     font-family: 'Source Code Pro', monospace;
-    overflow: hidden;
 }
 
 #code-side {
-    /* border: 2px solid white; */
     border-radius: 10px;
     width: 50%;
     float: left;
     height: 100%;
     padding: 5px;
+    overflow: auto;
 }
 
 #op-dec {
