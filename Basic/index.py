@@ -15,9 +15,9 @@ def index():
 @app.route('/', methods=['POST'])
 def getvalue():
     output=None
+    lang = str(request.form.get('lang'))
     code = request.form['code']
-    lang = request.form.get('lang') ##Check here Ashiq
-    print("lang= ", lang)
+    print("lang =", lang)
     data = {
     'client_secret': CLIENT_SECRET,
     'async': 0,

@@ -7,20 +7,19 @@
 
 <body>
     <div id="code-side">
-        <div id="code-head">
-            <button id="download">Download</button>
-            <div id="dropdown">
-                <select name="lang " id="dropbtn">
-                <div id="drop-content">
-                    <option value="python ">Python</option>
-                    <option value="java ">Java</option>
-                    <option value="c ">C</option>
-                    <option value="cpp ">C++ </option>
-                </div>
-                </select>
-            </div>
-        </div>
         <form id="form-code" action="." method="post" name="code-post" data-name="Code form" class="form">
+            <div id="code-head">
+                <button id="download">Download</button>
+                <div id="dropdown">
+                    <select name="lang" id="dropbtn">
+                        <option value=" ">Select a programming language</option>
+                        <option value="python ">Python</option>
+                        <option value="java ">Java</option>
+                        <option value="c ">C</option>
+                        <option value="cpp ">C++ </option>
+                    </select>
+                </div>
+            </div>
             <textarea class="codemirror-textarea" name="code"></textarea>
             <div id="op-dec"><strong>Output:</strong></div>
             <div contenteditable="true" id="code-output" name="output" placeholder="Ouput will be displayed here" class="outputr">{% if output %} {{ output }} {% endif %}</div>
