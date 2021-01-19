@@ -1,0 +1,117 @@
+body {
+    background-image: linear-gradient(to bottom left, #2c3858, #172036);
+    font-family: 'Source Code Pro', monospace;
+}
+
+#code-side {
+    border-radius: 10px;
+    width: 50%;
+    float: left;
+    height: 100%;
+    padding: 5px;
+    overflow: auto;
+}
+
+#op-dec {
+    margin-top: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    color: white;
+    background-color: #0e131f;
+    border-bottom: 2px solid white;
+}
+
+#code-output {
+    background-color: #16181d;
+    color: white;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 16px;
+    margin: auto;
+    height: 15%;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    outline-style: none;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#code-run,
+#download,
+#lang {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    background-image: linear-gradient(to bottom left, #271688, #0b1549);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+#download {
+    margin-top: 0px;
+}
+
+#dropdown {
+    position: relative;
+    display: inline-block;
+    border: none;
+}
+
+#dropbtn {
+    background-image: linear-gradient(to bottom left, #271688, #0b1549);
+    color: rgb(255, 255, 255);
+    background-color: #2a2d3a;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Customising codemirror look and feel */
+
+.CodeMirror {
+    font-family: 'Source Code Pro';
+    height: 60%;
+    color: white;
+    direction: ltr;
+    background-color: #161e35;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 30px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+    background-color: black;
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid rgb(255, 255, 255);
+    background-color: #263250;
+    white-space: nowrap;
+}
+
+.CodeMirror-linenumber {
+    padding: 0 3px 0 5px;
+    min-width: 20px;
+    text-align: right;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+}
+
+.CodeMirror-cursor {
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: none;
+    width: 1;
+}
