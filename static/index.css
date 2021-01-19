@@ -1,5 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-image: linear-gradient(to bottom left, #2c3858, #172036);
+    background: #151618;
     font-family: 'Source Code Pro', monospace;
 }
 
@@ -10,6 +16,7 @@ body {
     height: 100%;
     padding: 5px;
     overflow: auto;
+    margin-left: 5px;
 }
 
 #op-dec {
@@ -18,12 +25,12 @@ body {
     border-top-right-radius: 10px;
     padding: 10px;
     color: white;
-    background-color: #0e131f;
+    background-color: #080808;
     border-bottom: 2px solid white;
 }
 
 #code-output {
-    background-color: #16181d;
+    background-color: #181a1b;
     color: white;
     padding: 10px;
     border-bottom-left-radius: 10px;
@@ -31,7 +38,7 @@ body {
     font-size: 16px;
     margin: auto;
     height: 15%;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
     outline-style: none;
     overflow: auto;
     white-space: nowrap;
@@ -39,21 +46,42 @@ body {
 
 #code-run,
 #download,
-#lang {
+#dropbtn {
     padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
     font-size: 16px;
-    background-image: linear-gradient(to bottom left, #271688, #0b1549);
-    color: white;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;    background-image: linear-gradient(to bottom left, #271688, #0b1549);
+    color: #fff;
     border: none;
     border-radius: 5px;
-    margin-top: 30px;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    /* margin-top: 30px; */
+    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
+    text-decoration: none;
+    overflow: hidden;
+    justify-content: center;
 }
 
-#download {
+#dropbtn {
+    position: relative;
+    right: 0;
+    text-transform: none;
+}
+
+/* [New button css] */
+
+#download, #code-run {
     margin-top: 0px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+  
+#download:hover, #code-run:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#code-run {
+    margin-top: 30px;
 }
 
 #dropdown {
@@ -73,33 +101,34 @@ body {
     border-radius: 5px;
     cursor: pointer;
     border: none;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
 }
 
 
-/* Customising codemirror look and feel */
+/* [Customising codemirror look and feel] */
 
 .CodeMirror {
     font-family: 'Source Code Pro';
     height: 60%;
     color: white;
     direction: ltr;
-    background-color: #161e35;
+    background-color: #25282c;
     border-radius: 10px;
     margin: auto;
     margin-top: 30px;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
 }
 
 .CodeMirror-scrollbar-filler,
 .CodeMirror-gutter-filler {
-    background-color: black;
+    background-color: #000000;
 }
 
 .CodeMirror-gutters {
     border-right: 1px solid rgb(255, 255, 255);
-    background-color: #263250;
+    background-color: #000000;
     white-space: nowrap;
+    padding-right: 5px;
 }
 
 .CodeMirror-linenumber {
@@ -114,4 +143,25 @@ body {
     border-left: 1px solid rgb(255, 255, 255);
     border-right: none;
     width: 1;
+}
+
+/* [Scrollbar css] */
+        
+::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(90, 87, 87, 0);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000000;
 }
