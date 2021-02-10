@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/lib/codemirror.css">
+    <script type="text/javascript" src="../static/lib/codemirror.js"></script>
+    <script src="../static/mode/python/python.js"></script>
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="../static/addon/selection/active-line.js"></script>
+    <script src="../static/addon/edit/matchbrackets.js"></script>
+    <script type="text/javascript" src="../static/jquery.min.js"></script>
+  
+    <!-- themes -->
+    <link rel="stylesheet" href="../static/theme/nictophilia.css">
+    <link rel="stylesheet" href="../static/theme/3024-day.css">
+    <link rel="stylesheet" href="../static/theme/3024-night.css">
+    <link rel="stylesheet" href="../static/theme/abcdef.css">
+    <link rel="stylesheet" href="../static/theme/ambiance.css">
+    <link rel="stylesheet" href="../static/theme/ayu-dark.css">
+    <link rel="stylesheet" href="../static/theme/ayu-mirage.css">
+    <link rel="stylesheet" href="../static/theme/base16-dark.css">
+    <link rel="stylesheet" href="../static/theme/bespin.css">
+    <link rel="stylesheet" href="../static/theme/base16-light.css">
+    <link rel="stylesheet" href="../static/theme/blackboard.css">
+    <link rel="stylesheet" href="../static/theme/cobalt.css">
+    <link rel="stylesheet" href="../static/theme/colorforth.css">
+    <link rel="stylesheet" href="../static/theme/dracula.css">
+    <link rel="stylesheet" href="../static/theme/duotone-dark.css">
+    <link rel="stylesheet" href="../static/theme/duotone-light.css">
+    <link rel="stylesheet" href="../static/theme/eclipse.css">
+    <link rel="stylesheet" href="../static/theme/elegant.css">
+    <link rel="stylesheet" href="../static/theme/erlang-dark.css">
+    <link rel="stylesheet" href="../static/theme/gruvbox-dark.css">
+    <link rel="stylesheet" href="../static/theme/hopscotch.css">
+    <link rel="stylesheet" href="../static/theme/icecoder.css">
+    <link rel="stylesheet" href="../static/theme/isotope.css">
+    <link rel="stylesheet" href="../static/theme/lesser-dark.css">
+    <link rel="stylesheet" href="../static/theme/liquibyte.css">
+    <link rel="stylesheet" href="../static/theme/lucario.css">
+    <link rel="stylesheet" href="../static/theme/material.css">
+    <link rel="stylesheet" href="../static/theme/material-darker.css">
+    <link rel="stylesheet" href="../static/theme/material-palenight.css">
+    <link rel="stylesheet" href="../static/theme/material-ocean.css">
+    <link rel="stylesheet" href="../static/theme/mbo.css">
+    <link rel="stylesheet" href="../static/theme/mdn-like.css">
+    <link rel="stylesheet" href="../static/theme/midnight.css">
+    <link rel="stylesheet" href="../static/theme/monokai.css">
+    <link rel="stylesheet" href="../static/theme/moxer.css">
+    <link rel="stylesheet" href="../static/theme/neat.css">
+    <link rel="stylesheet" href="../static/theme/neo.css">
+    <link rel="stylesheet" href="../static/theme/night.css">
+    <link rel="stylesheet" href="../static/theme/nord.css">
+    <link rel="stylesheet" href="../static/theme/oceanic-next.css">
+    <link rel="stylesheet" href="../static/theme/panda-syntax.css">
+    <link rel="stylesheet" href="../static/theme/paraiso-dark.css">
+    <link rel="stylesheet" href="../static/theme/paraiso-light.css">
+    <link rel="stylesheet" href="../static/theme/pastel-on-dark.css">
+    <link rel="stylesheet" href="../static/theme/railscasts.css">
+    <link rel="stylesheet" href="../static/theme/rubyblue.css">
+    <link rel="stylesheet" href="../static/theme/seti.css">
+    <link rel="stylesheet" href="../static/theme/shadowfox.css">
+    <link rel="stylesheet" href="../static/theme/solarized.css">
+    <link rel="stylesheet" href="../static/theme/the-matrix.css">
+    <link rel="stylesheet" href="../static/theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="../static/theme/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="../static/theme/ttcn.css">
+    <link rel="stylesheet" href="../static/theme/twilight.css">
+    <link rel="stylesheet" href="../static/theme/vibrant-ink.css">
+    <link rel="stylesheet" href="../static/theme/xq-dark.css">
+    <link rel="stylesheet" href="../static/theme/xq-light.css">
+    <link rel="stylesheet" href="../static/theme/yeti.css">
+    <link rel="stylesheet" href="../static/theme/idea.css">
+    <link rel="stylesheet" href="../static/theme/darcula.css">
+    <link rel="stylesheet" href="../static/theme/yonce.css">
+    <link rel="stylesheet" href="../static/theme/zenburn.css">
+
+</head>
+
+<body>
+    <div id="dec">SIMUCODE</div>
+    <div id="code-side">
+        <form id="form-code" action="." method="post" name="code-post" data-name="Code form" class="form">
+            <div id="code-head">
+                <div id="btn-download">
+                    <svg width="22px" height="16px" viewBox="0 0 22 16">
+                      <path d="M2,10 L6,13 L12.8760559,4.5959317 C14.1180021,3.0779974 16.2457925,2.62289624 18,3.5 L18,3.5 C19.8385982,4.4192991 21,6.29848669 21,8.35410197 L21,10 C21,12.7614237 18.7614237,15 16,15 L1,15" id="check"></path>
+                      <polyline points="4.5 8.5 8 11 11.5 8.5" class="svg-out"></polyline>
+                      <path d="M8,1 L8,11" class="svg-out"></path>
+                    </svg>
+                    <script type="text/javascript" src="../static/default.js"></script>
+                </div>
+                <div class="dropdown">
+                    <select name="lang" class="dropbtn">
+                        <option value=" ">Select a programming language</option>
+                        <option value="py">Python</option>
+                        <option value="ja">Java</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <select name="select" class="dropbtn" onchange="selectTheme()" id="select">
+                        <option selected value="">nictophilia</option>
+                        <option>3024-day</option>
+                        <option>3024-night</option>
+                        <option>abcdef</option>
+                        <option>ambiance</option>
+                        <option>ayu-dark</option>
+                        <option>ayu-mirage</option>
+                        <option>base16-dark</option>
+                        <option>base16-light</option>
+                        <option>bespin</option>
+                        <option>blackboard</option>
+                        <option>cobalt</option>
+                        <option>colorforth</option>
+                        <option>darcula</option>
+                        <option>dracula</option>
+                        <option>duotone-dark</option>
+                        <option>duotone-light</option>
+                        <option>eclipse</option>
+                        <option>elegant</option>
+                        <option>erlang-dark</option>
+                        <option>gruvbox-dark</option>
+                        <option>hopscotch</option>
+                        <option>icecoder</option>
+                        <option>idea</option>
+                        <option>isotope</option>
+                        <option>lesser-dark</option>
+                        <option>liquibyte</option>
+                        <option>lucario</option>
+                        <option>material</option>
+                        <option>material-darker</option>
+                        <option>material-palenight</option>
+                        <option>material-ocean</option>
+                        <option>mbo</option>
+                        <option>mdn-like</option>
+                        <option>midnight</option>
+                        <option>monokai</option>
+                        <option>moxer</option>
+                        <option>neat</option>
+                        <option>neo</option>
+                        <option>night</option>
+                        <option>nord</option>
+                        <option>oceanic-next</option>
+                        <option>panda-syntax</option>
+                        <option>paraiso-dark</option>
+                        <option>paraiso-light</option>
+                        <option>pastel-on-dark</option>
+                        <option>railscasts</option>
+                        <option>rubyblue</option>
+                        <option>seti</option>
+                        <option>shadowfox</option>
+                        <option>solarized dark</option>
+                        <option>solarized light</option>
+                        <option>the-matrix</option>
+                        <option>tomorrow-night-bright</option>
+                        <option>tomorrow-night-eighties</option>
+                        <option>ttcn</option>
+                        <option>twilight</option>
+                        <option>vibrant-ink</option>
+                        <option>xq-dark</option>
+                        <option>xq-light</option>
+                        <option>yeti</option>
+                        <option>yonace</option>
+                        <option>zenburn</option>
+                    </select>
+                </div>
+            </div>
+            <textarea id="code" name="code"></textarea>
+            <script>
+                var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                  lineNumbers: true,
+                  matchBrackets: true
+                });
+                var input = document.getElementById("select");
+                function selectTheme() {
+                  var theme = input.options[input.selectedIndex].textContent;
+                  editor.setOption("theme", theme);
+                  location.hash = "#" + theme;
+                }
+                var choice = (location.hash && location.hash.slice(1)) ||
+                             (document.location.search &&
+                              decodeURIComponent(document.location.search.slice(1)));
+                if (choice) {
+                  input.value = choice;
+                  editor.setOption("theme", choice);
+                }
+                CodeMirror.on(window, "hashchange", function() {
+                  var theme = location.hash.slice(1);
+                  if (theme) { input.value = theme; selectTheme(); }
+                });
+            </script>
+            <div id="op-dec" contenteditable="false"><strong>Output:</strong></div>
+            <div contenteditable="true" id="code-output" name="output" placeholder="Ouput will be displayed here" class="outputr">{% if output %} {{ output }} {% endif %}</div>
+            <button id="code-run" type="submit ">Run</button>
+        </form>
+    </div>
+</body>
+
+</html>
