@@ -1,10 +1,7 @@
-from flask import Flask, render_template, request,url_for,Blueprint, flash, redirect,Markup
-import requests
+from flask import Flask, render_template, request, Markup
+import requests, json
 
-RUN_URL = 'https://api.hackerearth.com/v3/code/run/'
-CLIENT_SECRET = 'e375c29119a4a084d900238b9a3ef841eececd6f'
-
-
+# RUN_URL = 'http://ebe6b9ce745a.ngrok.io/compile'
 
 app = Flask(__name__)
 
@@ -14,25 +11,18 @@ def index():
 
 @app.route('/', methods=['POST'])
 def getvalue():
-    output=None
     lang = str(request.form.get('lang'))
     code = request.form['code']
-    print("lang =", lang)
+
     data = {
-    'client_secret': CLIENT_SECRET,
-    'async': 0,
-    'source': code,
-    'lang': "PYTHON",
-    'time_limit': 5,
-    'memory_limit': 262144,
+        "source":code,
+        "lang":lang,
+        "id":1,
     }
+    
+    data=json.dumps(data)
     r = requests.post(RUN_URL, data=data)
-    if(r.json()['compile_status']=="OK"):
-        print(r.json()['run_status']['output_html'])
-        output=Markup(r.json()['run_status']['output_html'])
-    else:
-        print(r.json()['compile_status'])
-        output=Markup(r.json()['compile_status'])
+    output = Markup(json.loads(r.json())["msg"])
     return render_template('index.html', output=output)
 
 

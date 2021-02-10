@@ -5,18 +5,35 @@
 }
 
 body {
-    background: #151618;
+    background: #0d1117;
     font-family: 'Source Code Pro', monospace;
 }
 
+#dec {
+    background-color: #000000;
+    width: 100%;
+    height: 5%;
+    font-size: 16px;
+    color: #c9d1d9;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
 #code-side {
-    border-radius: 10px;
     width: 50%;
+    height: 95vh;
     float: left;
-    height: 100%;
-    padding: 5px;
+    padding: 10px;
     overflow: auto;
     margin-left: 5px;
+    border-width: 0px 2px 0px 0px;
+    border-image: linear-gradient(0deg, rgb(13,17,23) 0%, rgb(48,54,61) 50%, rgb(13,17,23) 100%);
+    border-image-slice: 9;
+    border-style: solid;
 }
 
 #op-dec {
@@ -24,99 +41,145 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 10px;
-    color: white;
+    color: #c9d1d9;
     background-color: #080808;
-    border-bottom: 2px solid white;
+    border: 1px solid #30363d;
+    border-bottom: 1px solid #c9d1d9;
 }
 
 #code-output {
     background-color: #181a1b;
-    color: white;
+    color: #c9d1d9;
     padding: 10px;
+    border: 1px solid #30363d;
+    border-top: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     font-size: 16px;
     margin: auto;
     height: 15%;
-    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);    
     outline-style: none;
     overflow: auto;
-    white-space: nowrap;
 }
 
-#code-run,
-#download,
-#dropbtn {
-    padding: 10px;
-    font-size: 16px;
-    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;    background-image: linear-gradient(to bottom left, #271688, #0b1549);
-    color: #fff;
-    border: none;
+#code-head {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-bottom: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
     border-radius: 5px;
-    /* margin-top: 30px; */
-    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
-    text-decoration: none;
-    overflow: hidden;
-    justify-content: center;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
 }
 
-#dropbtn {
-    position: relative;
-    right: 0;
-    text-transform: none;
+.dropdown {
+  	margin: auto;
 }
 
-/* [New button css] */
-
-#download, #code-run {
-    margin-top: 0px;
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-  
-#download:hover, #code-run:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.dropbtn{
+  	margin: auto;
+  	padding: 5px;
+  	border-radius: 5px;
+  	color: #c9d1d9;
+  	background-color: #161b22;
+  	border:1px solid #30363d;
+  	font-family: 'Courier New', Courier, monospace;
+  	outline-style: none;
 }
 
-#code-run {
+#code-run{
+    display: block;
+    margin: auto;
+    float: left;
     margin-top: 30px;
-}
-
-#dropdown {
-    position: relative;
-    display: inline-block;
-    border: none;
-}
-
-#dropbtn {
-    background-image: linear-gradient(to bottom left, #271688, #0b1549);
-    color: rgb(255, 255, 255);
-    background-color: #2a2d3a;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #000000;
+    background-color: #2a9216;
+    border:1px solid #30363d;
     border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
 }
 
+/* [Download button css] */
 
-/* [Customising codemirror look and feel] */
+#btn-download {
+    margin-left: 20px;
+    cursor: pointer;
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #btn-download:hover {
+    background: rgba(34, 50, 84, 0.03);
+  }
+  #btn-download svg {
+    margin: 16px 0 0 16px;
+    fill: none;
+    transform: translate3d(0, 0, 0);
+  }
+  #btn-download svg polyline,
+  #btn-download svg path {
+    stroke: #0077FF;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+    transition-delay: 0.3s;
+  }
+  #btn-download svg path#check {
+    stroke-dasharray: 38;
+    stroke-dashoffset: 114;
+    transition: all 0.4s ease;
+  }
+  #btn-download.downloaded svg .svg-out {
+    opacity: 0;
+    animation: drop 0.3s linear;
+    transition-delay: 0.4s;
+  }
+  #btn-download.downloaded svg path#check {
+    stroke: #20CCA5;
+    stroke-dashoffset: 174;
+    transition-delay: 0.4s;
+  }
+  
+  @keyframes drop {
+    20% {
+      transform: translate(0, -3px);
+    }
+    80% {
+      transform: translate(0, 2px);
+    }
+    95% {
+      transform: translate(0, 0);
+    }
+  }
 
-.CodeMirror {
+/* [Cascading codemirror css defaults for nictophyle theme] */
+
+/* .CodeMirror {
     font-family: 'Source Code Pro';
     height: 60%;
     color: white;
     direction: ltr;
-    background-color: #25282c;
-    border-radius: 10px;
+    background-color: #131518;
+    border-radius: 5px;
     margin: auto;
-    margin-top: 30px;
-    box-shadow: 0px 2px 3px rgba(0,0,0,.13) ,1px 2px 2px rgba(0,0,0,.1) , -1px -2px 2px rgba(0,0,0,.05) ;
+    margin-top: 0px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    border:1px solid #30363d;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 .CodeMirror-scrollbar-filler,
@@ -125,17 +188,17 @@ body {
 }
 
 .CodeMirror-gutters {
-    border-right: 1px solid rgb(255, 255, 255);
-    background-color: #000000;
+    border-width: 0px 1px 0px 0px;
+    border-right: 1px solid #30363d;
+    background-color: #131518;
     white-space: nowrap;
     padding-right: 5px;
 }
 
 .CodeMirror-linenumber {
-    padding: 0 3px 0 5px;
     min-width: 20px;
     text-align: right;
-    color: rgb(255, 255, 255);
+    color: #c9d1d9;
     white-space: nowrap;
 }
 
@@ -143,25 +206,28 @@ body {
     border-left: 1px solid rgb(255, 255, 255);
     border-right: none;
     width: 1;
-}
+} */
 
 /* [Scrollbar css] */
         
 ::-webkit-scrollbar {
-    height: 7px;
-    width: 7px;
+    height: 5px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgba(90, 87, 87, 0);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(0, 0, 0);
+    background: #30363d91;
     border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #000000;
+.CodeMirror:hover ::-webkit-scrollbar-thumb{
+    background: #30363d;
+}
+
+body:hover body::-webkit-scrollbar-thumb{
+    background: #30363d;
 }
