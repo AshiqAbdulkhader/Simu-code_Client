@@ -13,7 +13,7 @@ def index():
 def getvalue():
     lang = str(request.form.get('lang'))
     code = request.form['code']
-
+    print(lang)
     data = {
         "source":code,
         "lang":lang,
@@ -23,7 +23,7 @@ def getvalue():
     data=json.dumps(data)
     r = requests.post(RUN_URL, data=data)
     output = Markup(json.loads(r.json())["msg"])
-    return render_template('index.html', output=output)
+    return render_template('index.html', output=output, code=code, lang=lang)
 
 
 if __name__ == "__main__":
