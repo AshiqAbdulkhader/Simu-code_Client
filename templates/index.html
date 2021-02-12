@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <title>SimuCode</title>
+    <link rel="shortcut icon" type="image/jpg" href="../static/assets/icon_idea.png"/>
     <link rel="stylesheet" type="text/css" href="../static/lib/codemirror.css">
     <script type="text/javascript" src="../static/lib/codemirror.js"></script>
     <link rel="stylesheet" href="../static/index.css">
@@ -33,7 +35,7 @@
 </head>
 
 <body>
-    <div id="dec">SIMUCODE</div>
+    <div id="dec"><div id="icon"><img src="../static/assets/icon_idea.png"></div><div id="text-dec">SIMUCODE</div></div>
     <div id="code-side">
         <form id="form-code" action="." method="post" name="code-post" data-name="Code form" class="form">
             <div id="code-head">
@@ -46,7 +48,7 @@
                 </div>
                 <div class="dropdown">
                     <select name="lang" class="dropbtn" id="lang" onchange="langchange()">
-                        <option selected value="">Select a programming language</option>
+                        <option selected value="">Language</option>
                         <option value="py">Python</option>
                         <option value="c">C</option>
                         <option value="cpp">C++</option>
@@ -69,7 +71,7 @@
                 </div>
                 <div class="dropdown">
                     <select name="select" class="dropbtn" onchange="selectTheme()" id="select">
-                        <option selected value="">nictophilia</option>
+                        <option>nictophilia</option>
                         <option>blackboard</option>
                         <option>isotope</option>
                         <option>moxer</option>
@@ -136,7 +138,7 @@
                 });
             </script>
             <div id="op-dec" contenteditable="false"><strong>Output:</strong></div>
-            <div contenteditable="true" id="code-output" name="output" placeholder="Ouput will be displayed here" class="outputr">{{ output }}</div>
+            <div contenteditable="false" id="code-output" name="output" placeholder="Ouput will be displayed here" class="outputr">{{ output }}</div>
             <button id="code-run" type="submit "><span>Run</span></button>
         </form>
     </div>
