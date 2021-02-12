@@ -23,12 +23,6 @@ body {
     font-size: 16px;
 }
 
-#dec img{
-  float:left;
-  margin: auto;
-	height: 40px;
-}
-
 #code-side {
     width: 50%;
     height: 95vh;
