@@ -117,7 +117,7 @@
                   lineNumbers: true,
                   matchBrackets: true
                 });
-                var input = document.getElementById("select").innerText;
+                var input = document.getElementById("select");
                 function selectTheme() {
                   var theme = input.options[input.selectedIndex].textContent;
                   editor.setOption("theme", theme);
