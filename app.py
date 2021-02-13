@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, Markup
 import requests, json
 
-RUN_URL = 'http://4318fc315a5b.ngrok.io/compile/'
+RUN_URL = 'http://389520335e8a.ngrok.io/compile/'
 
 app = Flask(__name__)
 
