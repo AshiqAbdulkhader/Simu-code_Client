@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, Markup
 import requests, json
 
-RUN_URL = 'http://7e82e892235e.ngrok.io/compile/'
+RUN_URL = 'https://simucode.loca.lt/compile/'
 
 app = Flask(__name__)
 
