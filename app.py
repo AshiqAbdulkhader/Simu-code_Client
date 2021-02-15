@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, Markup
 import requests, json
 
-RUN_URL = 'http://31a52ac59f45.ngrok.io/compile/'
+RUN_URL = 'http://cc38f0592716.ngrok.io/compile/'
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def index():
 def getvalue():
     lang = str(request.form.get('lang'))
     code = request.form['code']
-    print(lang)
+    theme = str(request.form['theme'])
     data = {
         "source":code,
         "lang":lang,
@@ -23,7 +23,7 @@ def getvalue():
     data=json.dumps(data)
     r = requests.post(RUN_URL, data=data)
     output = Markup(json.loads(r.json())["msg"])
-    return render_template('index.html', output=output, code=code, lang=lang)
+    return render_template('index.html', output=output, code=code, lang=lang, theme=theme)
 
 
 if __name__ == "__main__":
