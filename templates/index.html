@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="../static/lib/codemirror.css">
     <script type="text/javascript" src="../static/lib/codemirror.js"></script>
     <link rel="stylesheet" href="../static/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500&display=swap" rel="stylesheet">
     
     <!-- addons -->
     <script src="../static/addon/selection/active-line.js"></script>
@@ -18,7 +20,6 @@
     
     <!-- modes -->
     <script src="../static/mode/clike/clike.js"></script>
-    <script src="../static/mode/javascript/javascript.js"></script>
     <script src="../static/mode/python/python.js"></script>
 
     <!-- themes -->
@@ -49,99 +50,133 @@
                 <div class="dropdown">
                     <select name="lang" class="dropbtn" id="lang" onchange="langchange()">
                         <option selected value="">Language</option>
-                        <option value="py">Python</option>
-                        <option value="c">C</option>
-                        <option value="cpp">C++</option>
+                        <option value="python">Python</option>
+                        <option value="text/x-csrc">C</option>
+                        <option value="text/x-c++src">C++</option>
                     </select>
-                    <script>
-                        if("{{lang}}" != ""){
-                            document.getElementById('lang').value = '{{lang}}';
-                        }
-
-                        function langchange(){
-                            var sel = document.getElementById('lang').value;
-                            if(sel == 'c' || sel == 'cpp' || sel == 'java'){
-                                editor.setOption('mode','clike')
-                            }
-                            if(sel == 'py'){
-                                editor.setOption('mode','python')
-                            }
-                        }
-                    </script>
                 </div>
                 <div class="dropdown">
-                    <select name="select" class="dropbtn" onchange="selectTheme()" id="select">
-                        <option>nictophilia</option>
+                    <select name="theme" class="dropbtn" onchange="selectTheme()" id="theme">
+                        <option selected>nictophilia</option>
                         <option>blackboard</option>
                         <option>isotope</option>
                         <option>moxer</option>
                         <option>night</option>
                         <option>panda-syntax</option>
                         <option>shadowfox</option>
-                        <option>solarized dark</option>
+                        <option>solarized</option>
                         <option>the-matrix</option>
                         <option>vibrant-ink</option>
                     </select>
                 </div>
             </div>
             <textarea id="code" name="code" value="">{{code}}</textarea>
-            <script>
-                let saveFile = () => {
-                    let data = editor.getValue();
-
-                    const textToBLOB = new Blob([data], { type: 'text/plain' });
-                    const sFileName = 'Code.txt';
-
-                    let newLink = document.createElement("a");
-                    newLink.download = sFileName;
-
-                    if (window.webkitURL != null) {
-                        newLink.href = window.webkitURL.createObjectURL(textToBLOB);
-                    }
-                    else {
-                        newLink.href = window.URL.createObjectURL(textToBLOB);
-                        newLink.style.display = "none";
-                        document.body.appendChild(newLink);
-                    }
-                
-                    newLink.click(); 
-                }
-                $("#btn-download").click(function() {
-                  $("#btn-download").addClass("downloaded");
-                  setTimeout(
-                    function() {
-                      $("#btn-download").removeClass("downloaded");
-                    }, 1500);
-                });
-            </script>
-            <script>
-                var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-                  lineNumbers: true,
-                  matchBrackets: true
-                });
-                var input = document.getElementById("select");
-                function selectTheme() {
-                  var theme = input.options[input.selectedIndex].textContent;
-                  editor.setOption("theme", theme);
-                  location.hash = "#" + theme;
-                }
-                var choice = (location.hash && location.hash.slice(1)) ||
-                             (document.location.search &&
-                              decodeURIComponent(document.location.search.slice(1)));
-                if (choice) {
-                  input.value = choice;
-                  editor.setOption("theme", choice);
-                }
-                CodeMirror.on(window, "hashchange", function() {
-                  var theme = location.hash.slice(1);
-                  if (theme) { input.value = theme; selectTheme(); }
-                });
-            </script>
             <div id="op-dec" contenteditable="false"><strong>Output:</strong></div>
-            <div contenteditable="false" id="code-output" name="output" placeholder="Ouput will be displayed here" class="outputr">{{ output }}</div>
+            <div contenteditable="false" id="code-output" name="output" placeholder="Output will be displayed here" class="outputr"></div>
             <button id="code-run" type="submit "><span>Run</span></button>
         </form>
     </div>
 </body>
+
+<script>
+    let saveFile = () => {
+    let data = editor.getValue();
+
+    const textToBLOB = new Blob([data], { type: 'text/plain' });
+    const sFileName = 'Code.txt';
+
+    let newLink = document.createElement("a");
+    newLink.download = sFileName;
+
+    if (window.webkitURL != null) {
+        newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+    }
+    else {
+        newLink.href = window.URL.createObjectURL(textToBLOB);
+        newLink.style.display = "none";
+        document.body.appendChild(newLink);
+    }
+
+    newLink.click(); 
+}
+
+$("#btn-download").click(function() {
+    $("#btn-download").addClass("downloaded");
+    setTimeout(
+        function() {
+            $("#btn-download").removeClass("downloaded");
+        }, 1500);
+});
+
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    matchBrackets: true
+});
+
+var input = document.getElementById("theme");
+function selectTheme() {
+    var theme = input.options[input.selectedIndex].textContent;
+    editor.setOption("theme", theme);
+    location.hash = "#" + theme;
+}
+var choice = (location.hash && location.hash.slice(1)) ||
+             (document.location.search &&
+              decodeURIComponent(document.location.search.slice(1)));
+if (choice) {
+    input.value = choice;
+    editor.setOption("theme", choice);
+}
+CodeMirror.on(window, "hashchange", function() {
+    var theme = location.hash.slice(1);
+    if (theme) { input.value = theme; selectTheme(); }
+});
+
+var out = document.getElementById("code-output");
+var opd = document.getElementById("op-dec");
+var txa = String.raw`{{output}}`;
+var txe = txa.slice(0,6);
+if(txe.slice(0,2) == "ER"){
+    if(txe == "ER#001" || txe == "ER#002"){
+        var txv = txa.slice(7);
+    }
+    else if(txe == "ER#003"){
+        var txv = `{{output}}`.slice(7);
+    }
+    out.style.backgroundColor = "#ff000041";
+    out.style.color = "#ff0000";
+    out.style.border = "1px solid #ff0000";
+    out.style.borderTop = "0px";
+    out.style.boxShadow = "0 2.8px 2.2px rgba(255, 0, 0, 0.034), 0 6.7px 5.3px rgba(255, 0, 0, 0.048), 0 12.5px 10px rgba(255, 0, 0, 0.06), 0 22.3px 17.9px rgba(255, 0, 0, 0.072), 0 41.8px 33.4px rgba(255, 0, 0, 0.086), 0 100px 80px rgba(255, 0, 0, 0.12)";
+    out.innerHTML += txv;
+    opd.style.borderColor = "#ff0000";
+    opd.style.color = "#ff0000";
+}
+else if(txa != ""){
+    out.style.backgroundColor = "#00ff0041";
+    out.style.color = "#00ff00";
+    out.style.border = "1px solid #00ff00";
+    out.style.borderTop = "0px";
+    out.style.boxShadow = "0 2.8px 2.2px rgba(0, 255, 0, 0.034), 0 6.7px 5.3px rgba(0, 255, 0, 0.048), 0 12.5px 10px rgba(0, 255, 0, 0.06), 0 22.3px 17.9px rgba(0, 255, 0, 0.072), 0 41.8px 33.4px rgba(0, 255, 0, 0.086), 0 100px 80px rgba(0, 255, 0, 0.12)";
+    out.innerHTML += txa;
+    opd.style.borderColor = "#00ff00";
+    opd.style.color = "#00ff00";  
+}
+
+function langchange(){
+    var sel = document.getElementById('lang').value;
+    editor.setOption('mode',sel);
+}
+
+if("{{theme}}" != ""){
+    document.getElementById('theme').value = "{{theme}}";
+    editor.setOption("theme", "{{theme}}");
+    editor.setOption("mode","{{lang}}");
+}
+
+if("{{lang}}" != ""){
+    document.getElementById('lang').value = "{{lang}}";
+    editor.setOption('mode','{{lang}}');
+}
+</script>
 
 </html>
