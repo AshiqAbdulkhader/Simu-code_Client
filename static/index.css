@@ -1,84 +1,82 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    background: #0d1117;
-    font-family: 'Source Code Pro', monospace;
+	background: #0d1117;
+	font-family: 'Source Code Pro', monospace;
 }
 
 #dec {
-    width: 100%;
-    height: 5%;
-    margin: auto;
+	width: 100%;
+	height: 5%;
+	margin: auto;
 	display:flex;
 	align-items: center;
 	justify-content: center;
-    text-align: center;
-    vertical-align: middle;
-    background-color: #000000;
-    color: #c9d1d9;
-    font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #000000;
+	color: #c9d1d9;
+	font-size: 16px;
 }
 
 #code-side {
-    width: 50%;
-    height: 95vh;
-    overflow: auto;
-    float: left;
-    margin-left: 5px;
-    padding: 10px;
-    border-width: 0px 2px 0px 0px;
-    border-image: linear-gradient(0deg, rgb(13,17,23) 0%, rgb(48,54,61) 50%, rgb(13,17,23) 100%);
-    border-image-slice: 9;
-    border-style: solid;
+	width: 50%;
+	height: 95vh;
+	overflow: auto;
+	float: left;
+	margin-left: 5px;
+	padding: 10px;
+	border-width: 0px 2px 0px 0px;
+	border-image: linear-gradient(0deg, rgb(13,17,23) 0%, rgb(48,54,61) 50%, rgb(13,17,23) 100%);
+	border-image-slice: 9;
+	border-style: solid;
 }
 
 #op-dec {
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #080808;
-    color: #c9d1d9;
-    border: 1px solid #30363d;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom: 1px solid #c9d1d9;
+	margin-top: 30px;
+	padding: 10px;
+	background-color: #080808;
+	color: #c9d1d9;
+	border: 1px solid #30363d;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom: 1px solid #c9d1d9;
 }
 
 #code-output {
-    height: 15%;
-    overflow: auto;
-    margin: auto;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #181a1b;
-    color: #c9d1d9;
-    border: 1px solid #30363d;
-    border-top: 0px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);    
-    outline-style: none;
-    
+	height: 15%;
+	overflow: auto;
+	margin: auto;
+	padding: 10px;
+	font-size: 16px;
+	background-color: #181a1b;
+	color: #c9d1d9;
+	border: 1px solid #30363d;
+	border-top: 0px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);    
+	outline-style: none;
 }
 
 #code-head {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-bottom: 0px;
-    border-radius: 5px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+	background-color: #161b22;
+	border: 1px solid #30363d;
+	border-bottom: 0px;
+	border-radius: 5px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
 }
 
 .dropdown {
-    margin: auto;
+	margin: auto;
 }
 
 .dropbtn{
@@ -93,100 +91,100 @@ body {
 }
 
 #code-run{
-    display: block;
-    margin: auto;
-    float: left;
+	display: block;
+	margin: auto;
+	float: left;
 	cursor: pointer;
-    margin-top: 30px;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    color: #00ff00;
-    background-color: #00ff0041;
-    border:1px solid #00ff00;
-    border-radius: 5px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 500;
-    font-size: 20px;
+	margin-top: 30px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	color: #00ff00;
+	background-color: #00ff0041;
+	border:1px solid #00ff00;
+	border-radius: 5px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 500;
+	font-size: 20px;
 }
 
 /* [Download button css] */
 
 #btn-download {
-    height: 48px;
-    width: 48px;
-    display: block;
-    margin-left: 20px;
-    cursor: pointer;
-    border-radius: 50%;
-    -webkit-tap-highlight-color: transparent;
+	height: 48px;
+	width: 48px;
+	display: block;
+	margin-left: 20px;
+	cursor: pointer;
+	border-radius: 50%;
+	-webkit-tap-highlight-color: transparent;
   }
   #btn-download:hover {
-    background: rgba(34, 50, 84, 0.03);
+	background: rgba(34, 50, 84, 0.03);
   }
   #btn-download svg {
-    margin: 16px 0 0 16px;
-    fill: none;
-    transform: translate3d(0, 0, 0);
+	margin: 16px 0 0 16px;
+	fill: none;
+	transform: translate3d(0, 0, 0);
   }
   #btn-download svg polyline,
   #btn-download svg path {
-    stroke: #0077FF;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: all 0.3s ease;
-    transition-delay: 0.3s;
+	stroke: #0077FF;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	transition: all 0.3s ease;
+	transition-delay: 0.3s;
   }
   #btn-download svg path#check {
-    stroke-dasharray: 38;
-    stroke-dashoffset: 114;
-    transition: all 0.4s ease;
+	stroke-dasharray: 38;
+	stroke-dashoffset: 114;
+	transition: all 0.4s ease;
   }
   #btn-download.downloaded svg .svg-out {
-    opacity: 0;
-    animation: drop 0.3s linear;
-    transition-delay: 0.4s;
+	opacity: 0;
+	animation: drop 0.3s linear;
+	transition-delay: 0.4s;
   }
   #btn-download.downloaded svg path#check {
-    stroke: #20CCA5;
-    stroke-dashoffset: 174;
-    transition-delay: 0.4s;
+	stroke: #20CCA5;
+	stroke-dashoffset: 174;
+	transition-delay: 0.4s;
   }
   
   @keyframes drop {
-    20% {
-      transform: translate(0, -3px);
-    }
-    80% {
-      transform: translate(0, 2px);
-    }
-    95% {
-      transform: translate(0, 0);
-    }
+	20% {
+	  transform: translate(0, -3px);
+	}
+	80% {
+	  transform: translate(0, 2px);
+	}
+	95% {
+	  transform: translate(0, 0);
+	}
   }
 
 /* [Scrollbar css] */
-        
+		
 ::-webkit-scrollbar {
-    height: 5px;
-    width: 5px;
+	height: 5px;
+	width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
+	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #30363d91;
-    border-radius: 5px;
+	background: #30363d91;
+	border-radius: 5px;
 }
 
 .CodeMirror:hover ::-webkit-scrollbar-thumb{
-    background: #30363d;
+	background: #30363d;
 }
 
 body:hover body::-webkit-scrollbar-thumb{
-    background: #30363d;
+	background: #30363d;
 }
