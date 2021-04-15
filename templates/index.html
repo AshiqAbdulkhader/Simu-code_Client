@@ -6,10 +6,11 @@
     <link rel="stylesheet" type="text/css" href="../static/lib/codemirror.css">
     <script type="text/javascript" src="../static/lib/codemirror.js"></script>
     <link rel="stylesheet" href="../static/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="../static/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     
     <!-- addons -->
     <script src="../static/addon/selection/active-line.js"></script>
@@ -110,7 +111,9 @@
 
     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
-        matchBrackets: true
+        matchBrackets: true,
+        activeline: true,
+        foldindent: true
     });
 
     var input = document.getElementById("theme");
