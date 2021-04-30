@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #000;
+	font-family: 'Courier New', Courier, monospace;  
+	overflow: hidden; 
+}
+
+#head{
+	width: 20%;
+	height: 5%;
+	margin: auto;
+	padding: 20px;
+	padding-top: 5px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #000000;
+	color: #c9d1d9;
+	font-size: 30px;
+	font-family: 'Muli';
+	transform: perspective(10px) rotateX(-1deg);
+	border-radius: 0px 0px 10px 10px;
+	border: 1px solid white;
+}
+
+#content{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+}
+
+#form{
+	width: 25vw;
+	overflow: auto;
+	margin: auto;
+	position: fixed;
+	padding: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 16px;
+	font-family: 'Gotham Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	background-color: #181a1b93;
+	color: #c9d1d9;
+	border: 5px solid rgb(0, 255, 0);
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 255, 0, 0.034), 0 6.7px 5.3px rgba(0, 255, 0, 0.048), 0 12.5px 10px rgba(0, 255, 0, 0.06), 0 22.3px 17.9px rgba(0, 255, 0, 0.072), 0 41.8px 33.4px rgba(0, 255, 0, 0.086), 0 100px 80px rgba(0, 255, 0, 0.12);    
+	box-shadow: inset 0 0 10px #000000;
+	outline-style: none;
+	align-items: center;
+	text-align: center;
+	border-left: 0px;
+	border-right: 0px;
+	backdrop-filter: blur(2px);
+
+}
+
+#login-dec{
+	width: 50%;
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	color: #fff;
+	font-family: 'Noto Sans JP';
+	font-weight: 400;
+	font-size: 20px;
+}
+
+#form-dec{
+	width: 80%;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	vertical-align: middle;
+	margin: auto;
+	padding: 5px;
+	font-size: 30px;
+	font-weight: 900;
+	font-family: Roboto, "Helvetica Neue", Arial;
+	border-radius: 10px;
+}
+
+.inputfield{
+	width: 80%;
+	padding: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: inline-block;
+	margin: 10px;
+	background-color: transparent;
+	border: 0px;
+	border-radius: 5px;
+	box-shadow: inset 0 0 10px #000000;
+	font-size: 20px;
+	font-family: 'Source Code Pro';
+	outline-style: none;
+	color: #ffffff;
+}
+
+.pass{
+	margin-bottom: 0px;
+}
+
+.container{
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+	top: 15%;
+	width: 80%;
+	padding: 0px;
+}
+
+.btn-links{
+	margin: 0%;
+	width: 49%;
+	padding-right: 5px;
+	padding-left: 5px;
+	box-shadow:none;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+#forgot-pass{
+	text-align: right;
+}
+
+#accctrl{
+	text-align: left;
+}
+
+.lgnbtn{
+	width: 80%;
+	display: block;
+	margin-bottom: 20px;
+	cursor: pointer;
+	position: relative;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%,0%);
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	color: #00ff00;
+	background-color: #00ff0041;
+	border:1px solid #00ff00;
+	border-radius: 5px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 500;
+	font-size: 20px;
+}
+
+#opt{
+	top: 16%;
+	width: 80%; 
+	text-align: center; 
+	border-bottom: 1px solid rgb(255, 255, 255); 
+	line-height: 0.1em;
+	margin: 10px 0 20px; 
+} 
+
+#opt span{ 
+	background: #0d0f0f;
+	padding: 0 10px; 
+}
+
+#or-else{
+	top: 16%;
+	color: #fff;
+	text-align: left;
+	font-size: 14px;
+	font-family: 'Source Code Pro';
+}
+
+.social{
+	top: 16%;
+	height: 70px;
+	width: 70px;
+	margin: 12px;
+	border-radius: 5px;
+	padding: 10px;
+	transition: 0.35s ease-in;
+}
+
+.social:hover{
+	background-color: #00ff004f;
+}
+
+.invalid{
+	font-size: smaller !important;
+	color: rgba(255, 0, 0, 0.7) !important;
+}
+
+/* [Scrollbar css] */
+		
+::-webkit-scrollbar {
+	height: 5px;
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #30363d91;
+	border-radius: 5px;
+}

@@ -10,6 +10,8 @@ setup(
     install_requires=[
         'Flask==1.1.2',
         'requests==2.25.0',
-        'gunicorn==20.0.4'
+        'gunicorn==20.0.4',
+        'flask_wtf',
+        'wtforms'
         ]
 )

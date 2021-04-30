@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Simu-code</title>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script> 
+        <link rel="stylesheet" href="../static/pages.css">
+    </head>
+
+    <body>
+        <div id="content">
+            <form id="form" action="" method="post" name="login" data-name="Login form">
+                <div id="form-dec">SIMU-CODE</div>
+                <div id="login-dec">Sign in</div>
+
+                {{form.hidden_tag()}}
+
+                {% if form.username.errors %}
+                    {{ form.username(class="inputfield uname", id="uname") }}
+                    <div class="invalid">
+                        {% for error in form.username.errors %}
+                            <span class="invalid">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.username(class="inputfield uname", id="uname") }}
+                {% endif %}
+
+                {% if form.password.errors %}
+                    {{ form.password(class="inputfield pass", id="pwd") }}
+                    <div class="invalid">
+                        {% for error in form.password.errors %}
+                            <span class="invalid">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.password(class="inputfield pass", id="pwd") }}
+                {% endif %}
+
+                    {{form.submit(class="lgnbtn")}}
+                <div id="opt" class="container"><span>OR</span></div>
+                <div id="or-else" class="container">Sign in with:</div>
+                <div class="container">
+                    <img class="social" src="../static/assets/icons/google.png">
+                    <img class="social" src="./static/assets/icons/github.png">
+                </div>
+            </form>
+        </div>
+        <script src="./static/particle_network.js"></script>
+    </body>
+
+</html>
