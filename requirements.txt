@@ -3,3 +3,4 @@ requests==2.25.0
 gunicorn==20.0.4
 flask_wtf
 wtforms
+psycopg2-binary
