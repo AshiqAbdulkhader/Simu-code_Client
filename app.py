@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, redirect, Markup, request
 from flask.helpers import url_for
 from formspages import LoginForm
 import requests, json
+from validate import auth
 
 RUN_URL = 'http://13.234.251.104:8000/compile/'
 
@@ -15,7 +16,7 @@ def login():
     if form.validate_on_submit():
         uname = request.form['username']
         pwd = request.form['password']
-        if uname == 'admin' and pwd == 'simucode@101':
+        if auth(uname,pwd):
             flash(f'Logged in as {form.username.data}', 'success')
             return redirect(url_for('index'))
     return render_template('login.html', title='Login', form = form)
