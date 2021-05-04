@@ -17,15 +17,6 @@
             <form id="form" action="" method="post" name="login" data-name="Login form">
                 <div id="form-dec">SIMU-CODE</div>
                 <div id="login-dec">Sign in</div>
-                {% with messages = get_flashed_messages() %}
-                  {% if messages %}
-                    <ul class=flashes>
-                    {% for message in messages %}
-                      <li>{{ message }}</li>
-                    {% endfor %}
-                    </ul>
-                  {% endif %}
-                {% endwith %}
                 
                 {{form.hidden_tag()}}
 
