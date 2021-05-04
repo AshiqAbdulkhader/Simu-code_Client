@@ -1,5 +1,5 @@
-from flask import Flask, render_template, flash, redirect, Markup, request
-from flask.helpers import url_for
+from flask import Flask, render_template, flash, redirect, Markup, request, session
+from flask.helpers import get_flashed_messages, url_for
 from formspages import LoginForm
 import requests, json
 from validate import auth
@@ -17,13 +17,18 @@ def login():
         uname = request.form['username']
         pwd = request.form['password']
         if auth(uname,pwd):
-            flash(f'Logged in as {form.username.data}', 'success')
-            return redirect(url_for('index'))
+            if 'uid' in session and session['uid'] == uname:
+                return redirect(url_for('index')) #Need to handle this better
+            else:
+                session['uid'] = uname
+                return redirect(url_for('index'))
     return render_template('login.html', title='Login', form = form)
 
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    if 'uid' in session:
+        uname = session['uid']
+    return render_template('index.html', uname = uname)
 
 @app.route('/index', methods=['POST'])
 def getvalue():
@@ -35,11 +40,15 @@ def getvalue():
         "lang":lang,
         "id":1,
     }
-    
     data=json.dumps(data)
     r = requests.post(RUN_URL, data=data)
     output = Markup(json.loads(r.json())["msg"])
     return render_template('index.html', output=output, code=code, lang=lang, theme=theme)
+
+@app.route('/logout')
+def logout():
+    session.pop('uid', None)
+    return redirect(url_for('login'))
 
 
 if __name__ == "__main__":

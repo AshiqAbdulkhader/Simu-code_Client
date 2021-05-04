@@ -37,7 +37,16 @@
 </head>
 
 <body>
-    <div id="dec">SIMUCODE</div>
+    <div id="dec">
+        <div>SIMUCODE</div>
+        <div id="rightcont">
+            <div id="lidec">
+                <div id="l-text">Logged in as</div>
+                <div id="l-user">{{uname}}</div>
+            </div>
+            <a href=logout id="linker"><button id="logout">Logout</button></a>
+        </div>
+    </div>
     <div id="code-side">
         <form id="form-code" action="index" method="post" name="code-post" data-name="Code form" class="form">
             <div id="code-head">
@@ -73,7 +82,7 @@
             </div>
             <textarea id="code" name="code" value="">{{code}}</textarea>
             <div id="op-dec" contenteditable="false"><strong>Output:</strong></div>
-            <div contenteditable="false" id="code-output" name="output" class="outputr"></div>
+            <div contenteditable="false" id="code-output" name="output" class="outputr">{{output}}</div>
             <button id="code-run" type="submit "><span>Run</span></button>
         </form>
     </div>

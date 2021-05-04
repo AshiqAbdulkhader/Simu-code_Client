@@ -19,11 +19,53 @@ body {
 	display:flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
 	vertical-align: middle;
 	background-color: #000000;
 	color: #c9d1d9;
 	font-size: 16px;
+}
+
+#rightcont{
+	position: absolute;
+	right: 0%;
+	display: flex;
+	align-items: center;
+	vertical-align: middle;
+	width: 16%;
+}
+
+#lidec{
+	display: flex;
+	margin-right: 0px;
+}
+
+#l-user{
+	margin-left: 10px;
+	color: #12ee75;
+}
+
+#linker{
+	margin: none;
+	position: absolute;
+	right: 5px;
+}
+
+#logout{
+	display: block;
+	margin: auto;
+	float: left;
+	cursor: pointer;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	color: #ff0000;
+	background-color: #ff000041;
+	border:1px solid #ff5100;
+	border-radius: 5px;
+	font-family: 'JetBrains Mono', monospace;
+	font-weight: 500;
+	font-size: 15px;
 }
 
 #code-side {
