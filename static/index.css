@@ -14,7 +14,7 @@ body {
 
 #dec {
 	width: 100%;
-	height: 5%;
+	height: 5vh;
 	margin: auto;
 	display:flex;
 	align-items: center;
@@ -153,6 +153,10 @@ body {
 	font-family: 'JetBrains Mono', monospace;
 	font-weight: 500;
 	font-size: 20px;
+}
+
+#form-code{
+	height: 100%;
 }
 
 /* [Download button css] */
