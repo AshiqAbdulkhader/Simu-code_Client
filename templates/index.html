@@ -1,6 +1,10 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimuCode</title>
     <link rel="shortcut icon" type="image/jpg" href="../static/assets/icon_idea.png"/>
     <link rel="stylesheet" type="text/css" href="../static/lib/codemirror.css">
@@ -82,7 +86,7 @@
             </div>
             <textarea id="code" name="code" value="">{{code}}</textarea>
             <div id="op-dec" contenteditable="false"><strong>Output:</strong></div>
-            <div contenteditable="false" id="code-output" name="output" class="outputr">{{output}}</div>
+            <div contenteditable="false" id="code-output" name="output" class="outputr"></div>
             <button id="code-run" type="submit "><span>Run</span></button>
         </form>
     </div>
@@ -189,6 +193,7 @@
         document.getElementById('lang').value = "{{lang}}";
         editor.setOption('mode','{{lang}}');
     }
+
 </script>
 
 </html>
