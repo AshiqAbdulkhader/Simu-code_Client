@@ -4,9 +4,9 @@ from formspages import LoginForm
 import requests, json
 from validate import auth
 
-# RUN_URL = 'http://13.234.251.104:8000/compile/'
-RUN_URL = 'http://35.154.94.183:8000/compile/'
-# RUN_URL = 'http://127.0.0.1:8000/compile/'
+
+RUN_URL = 'http://3.108.121.105:8000/compile/'
+
 
 app = Flask(__name__)
 
